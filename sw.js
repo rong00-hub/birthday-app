@@ -1,4 +1,4 @@
-const CACHE_NAME = 'birthday-app-v5';
+const CACHE_NAME = 'birthday-app-' + Date.now();
 const ASSETS = [
   './',
   './index.html',

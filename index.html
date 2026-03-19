@@ -152,10 +152,10 @@
     .reward-photo {
       width: 100%; max-width: 340px;
       border-radius: 16px; overflow: hidden;
-      margin: 20px 0 8px; min-height: 220px;
+      margin: 20px 0 8px;
       background: rgba(201,96,122,0.04);
     }
-    .reward-photo img { width: 100%; display: block; object-fit: cover; }
+    .reward-photo img { width: 100%; height: auto; display: block; }
 
     .photo-stack {
       display: flex; flex-direction: column; gap: 16px;
@@ -167,10 +167,10 @@
     .reward-video {
       width: 100%; max-width: 340px;
       border-radius: 16px; overflow: hidden;
-      margin: 20px 0 8px; min-height: 40px;
+      margin: 20px 0 8px;
       background: #000;
     }
-    .reward-video video { width: 100%; display: block; max-height: 380px; object-fit: cover; }
+    .reward-video video { width: 100%; height: auto; display: block; }
 
     .video-stack {
       display: flex; flex-direction: column; gap: 16px;
@@ -305,15 +305,17 @@
         0 0 30px rgba(201,96,122,0.3),
         0 0 70px rgba(201,96,122,0.1),
         inset 0 0 20px rgba(201,96,122,0.05);
-      background: rgba(201,96,122,0.04);
-      aspect-ratio: 1 / 1;
+      background: rgba(13,8,19,0.8);
+      aspect-ratio: 4 / 3;
     }
     .slide {
       position: absolute; inset: 0;
       opacity: 0; transition: opacity 0.8s ease;
+      display: flex; align-items: center; justify-content: center;
     }
     .slide.active { opacity: 1; }
-    .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .slide img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .slide video { width: 100%; height: 100%; object-fit: contain; display: block; }
 
     .slide-arrow {
       position: absolute; top: 50%; transform: translateY(-50%);
@@ -360,7 +362,7 @@
 
   <div id="s0-initial" style="display:flex;flex-direction:column;align-items:center">
     <div class="heart-burst">🎂</div>
-    <h1 class="fade-in-delay">Happy<br><em>Birthday</em></h1>
+    <h1 class="fade-in-delay">Happy Birthday<br><em>Klari Love!</em></h1>
     <div class="divider fade-in-delay"></div>
     <p class="fade-in-delay2">Something special is waiting for you...</p>
     <button class="btn fade-in-delay3" onclick="revealChallenge()">Open your gift ✨</button>
@@ -397,8 +399,8 @@
 <div class="screen screen-scroll" id="screen-2">
   <p class="correct-badge">✓ Correct!</p>
   <div class="reward-photo">
-    <!-- TO REPLACE: put photo1.jpeg in the same folder and uncomment below -->
-    <img src="foto1.jpeg" alt="">
+    <!-- TO REPLACE: put photo1.jpg in the same folder and uncomment below -->
+    <img src="foto1.jpg" alt="">
   </div>
   <button class="btn" onclick="goTo(3)">Next →</button>
 </div>
@@ -425,7 +427,7 @@
   <p class="correct-badge">✓ Correct!</p>
   <div class="reward-video">
     <!-- TO REPLACE: put video1.mp4 in the same folder and uncomment below -->
-    <video autoplay loop muted playsinline src="video1.mp4"></video>
+    <video controls playsinline src="video1.mp4"></video>
   </div>
   <button class="btn" onclick="goTo(5)">Next →</button>
 </div>
@@ -457,8 +459,8 @@
 <div class="screen screen-scroll" id="screen-6">
   <p class="correct-badge">✓ Correct!</p>
   <div class="reward-photo">
-    <!-- TO REPLACE: put photo2.jpeg in the same folder and uncomment below -->
-    <img src="foto2.jpeg" alt="">
+    <!-- TO REPLACE: put photo2.jpg in the same folder and uncomment below -->
+    <img src="foto2.jpg" alt="">
   </div>
   <p style="color:var(--cream);margin-top:20px;font-family:var(--font-serif);font-size:19px;font-style:italic;max-width:300px">
     Yes, Beaumont! Such a big bad gorgeous boy...
@@ -474,7 +476,7 @@
   <p class="eyebrow">Question 3 of 3</p>
   <h2>What did I like the most<br>about our trip to <em>the UK?</em></h2>
   <div class="quiz-options">
-    <button class="quiz-option" onclick="quiz(false, 'Do you actually know me? Try again please.')">A. The Churches</button>
+    <button class="quiz-option" onclick="quiz(false, 'Yeah, right.')">A. The Churches</button>
     <button class="quiz-option" onclick="quiz(false, 'Do you actually know me? Try again please.')">B. The Tube</button>
     <button class="quiz-option" onclick="quiz(true, '', 8)">C. The Pubs</button>
   </div>
@@ -489,11 +491,11 @@
   <div class="video-stack">
     <div class="reward-video">
       <!-- TO REPLACE: put video2.mp4 in the same folder and uncomment below -->
-       <video autoplay loop muted playsinline src="video2.mp4"></video> 
+      <video controls playsinline src="video2.mp4"></video>
     </div>
     <div class="reward-video">
       <!-- TO REPLACE: put video3.mp4 in the same folder and uncomment below -->
-      <video autoplay loop playsinline src="video3.mp4"></video>
+      <video controls playsinline src="video3.mp4"></video>
     </div>
   </div>
   <button class="btn" onclick="goTo(9)">Next →</button>
@@ -527,12 +529,12 @@
   <p class="correct-badge">✓ You're good at this babe!</p>
   <div class="photo-stack">
     <div class="reward-photo">
-      <!-- TO REPLACE: put photo4.jpeg in the same folder and uncomment below -->
-       <img src="foto4.jpeg" alt="">
+      <!-- TO REPLACE: put photo4.jpg in the same folder and uncomment below -->
+      <img src="foto4.jpg" alt="">
     </div>
     <div class="reward-photo">
-      <!-- TO REPLACE: put photo5.jpeg in the same folder and uncomment below -->
-       <img src="foto5.jpeg" alt="">
+      <!-- TO REPLACE: put photo5.jpg in the same folder and uncomment below -->
+      <img src="foto5.jpg" alt="">
     </div>
   </div>
   <button class="btn" onclick="goTo(11)">Next →</button>
@@ -566,8 +568,8 @@
     Hope you had fun and have<br>an excellent birthday. 🥂
   </p>
   <div class="reward-photo" style="margin-top:24px">
-    <!-- TO REPLACE: put photo6.jpeg in the same folder and uncomment below -->
-     <img src="foto99.jpeg" alt="">
+    <!-- TO REPLACE: put photo6.jpg in the same folder and uncomment below -->
+    <img src="foto6.jpg" alt="">
   </div>
   <button class="btn" onclick="goTo(13)">Open your gift 🎁</button>
 </div>
@@ -587,7 +589,7 @@
   <p class="gift-text" style="color:var(--muted);font-size:15px;margin-top:6px">Let's have a chill time:</p>
   <div class="reward-photo">
     <!-- TO REPLACE: put photo7.jpg in the same folder and uncomment below -->
-     <img src="foto7.jpeg" alt=""> 
+    <!-- <img src="photo7.jpg" alt=""> -->
   </div>
   <p class="gift-text" style="margin-top:4px">
     Since we'll be a bit hungry after that,
@@ -595,7 +597,7 @@
   </p>
   <div class="reward-photo">
     <!-- TO REPLACE: put photo8.jpg in the same folder and uncomment below -->
-     <img src="foto8.jpeg" alt="">
+    <!-- <img src="photo8.jpg" alt=""> -->
   </div>
   <button class="btn" onclick="goTo(14)">Almost there... 💛</button>
 </div>
@@ -619,7 +621,8 @@
     I love you so much <em>Klari</em>,<br>
     and wish you always all the best.
   </p>
-  <p class="signature">— Always yours,<br> Rod.  🌹</p>
+  <p class="signature">— Always yours,<br>Rod. 🌹</p>
+  <button class="btn" onclick="restartApp()" style="margin-top:32px;border-color:rgba(255,255,255,0.15);color:var(--muted);font-size:13px;padding:12px 28px">↩ Start over</button>
 
 </div>
 
@@ -699,6 +702,17 @@
     document.getElementById(id).classList.toggle('show');
   }
 
+  // RESTART
+  function restartApp() {
+    stopConfettiLoop();
+    clearInterval(slideTimer);
+    slideIndex = 0;
+    // Reset screen 0 to initial state
+    document.getElementById('s0-initial').style.display = 'flex';
+    document.getElementById('s0-challenge').style.display = 'none';
+    goTo(0);
+  }
+
   // CONFETTI — fires on arrival at screen 14, then repeats every 30s
   let confettiInterval = null;
 
@@ -734,27 +748,16 @@
 
   // SLIDESHOW
   // ─────────────────────────────────────────────────────
-  // TO CONFIGURE: add or remove filenames from this array.
-  // Put all these files in the same folder as index.html.
-  const SLIDESHOW_PHOTOS = [
-    'video4.mp4',
-    'foto9.jpeg',
-    'foto10.jpeg',
-    'foto11.jpeg',
-    'foto12.jpeg',
-    'foto13.jpeg',
-    'foto14.jpeg',
-    'foto15.jpeg',
-    'foto16.jpeg',
-    'foto17.jpeg',
-    'foto18.jpeg',
-    'foto19.jpeg',
-    'foto20.jpeg',
-    'foto21.jpeg',
-    'foto22.jpeg',
-    'foto23.jpeg',
-    'foto24.jpeg',
-    // add more here, e.g. 'photo12.jpg',
+  // TO CONFIGURE: add or remove items from this array.
+  // type: 'image' or 'video'
+  // Put all files in the same folder as index.html.
+  const SLIDESHOW_MEDIA = [
+    { type: 'image', src: 'photo9.jpg'  },
+    { type: 'image', src: 'photo10.jpg' },
+    { type: 'image', src: 'photo11.jpg' },
+    { type: 'video', src: 'video4.mp4' },
+    // { type: 'image', src: 'photo12.jpg' },
+    // { type: 'video', src: 'video4.mp4'  },
   ];
   // ─────────────────────────────────────────────────────
 
@@ -762,18 +765,31 @@
   let slideTimer = null;
 
   function buildSlideshow() {
-    const frame = document.getElementById('slideshow');
+    const frame  = document.getElementById('slideshow');
     const dotsEl = document.getElementById('slide-dots');
 
-    SLIDESHOW_PHOTOS.forEach((src, i) => {
+    SLIDESHOW_MEDIA.forEach((item, i) => {
       const slide = document.createElement('div');
       slide.className = 'slide' + (i === 0 ? ' active' : '');
       slide.id = `slide-${i}`;
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = '';
-      slide.appendChild(img);
-      // Insert before the arrow buttons
+
+      if (item.type === 'video') {
+        const vid = document.createElement('video');
+        vid.src = item.src;
+        vid.controls = true;
+        vid.setAttribute('playsinline', '');
+        // Pause auto-advance while video is playing
+        vid.addEventListener('play',  () => clearInterval(slideTimer));
+        vid.addEventListener('pause', () => startSlideAuto());
+        vid.addEventListener('ended', () => { startSlideAuto(); showSlide(slideIndex + 1); });
+        slide.appendChild(vid);
+      } else {
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = '';
+        slide.appendChild(img);
+      }
+
       frame.insertBefore(slide, frame.querySelector('.slide-arrow'));
 
       const dot = document.createElement('div');
@@ -786,7 +802,13 @@
   }
 
   function showSlide(n) {
-    const total = SLIDESHOW_PHOTOS.length;
+    const total = SLIDESHOW_MEDIA.length;
+    // Pause any playing video in current slide
+    const currentSlideEl = document.getElementById(`slide-${slideIndex}`);
+    if (currentSlideEl) {
+      const vid = currentSlideEl.querySelector('video');
+      if (vid) vid.pause();
+    }
     slideIndex = (n + total) % total;
     document.querySelectorAll('.slide').forEach((s, i) => s.classList.toggle('active', i === slideIndex));
     document.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === slideIndex));
@@ -796,6 +818,7 @@
   function slidePrev() { resetSlideTimer(); showSlide(slideIndex - 1); }
 
   function startSlideAuto() {
+    clearInterval(slideTimer);
     slideTimer = setInterval(() => showSlide(slideIndex + 1), 4000);
   }
   function resetSlideTimer() {
