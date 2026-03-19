@@ -400,7 +400,7 @@
   <p class="correct-badge">✓ Correct!</p>
   <div class="reward-photo">
     <!-- TO REPLACE: put photo1.jpg in the same folder and uncomment below -->
-    <img src="foto1.jpg" alt="">
+    <img src="foto1.jpeg" alt="">
   </div>
   <button class="btn" onclick="goTo(3)">Next →</button>
 </div>
@@ -460,7 +460,7 @@
   <p class="correct-badge">✓ Correct!</p>
   <div class="reward-photo">
     <!-- TO REPLACE: put photo2.jpg in the same folder and uncomment below -->
-    <img src="foto2.jpg" alt="">
+    <img src="foto2.jpeg" alt="">
   </div>
   <p style="color:var(--cream);margin-top:20px;font-family:var(--font-serif);font-size:19px;font-style:italic;max-width:300px">
     Yes, Beaumont! Such a big bad gorgeous boy...
@@ -530,11 +530,11 @@
   <div class="photo-stack">
     <div class="reward-photo">
       <!-- TO REPLACE: put photo4.jpg in the same folder and uncomment below -->
-      <img src="foto4.jpg" alt="">
+      <img src="foto4.jpeg" alt="">
     </div>
     <div class="reward-photo">
       <!-- TO REPLACE: put photo5.jpg in the same folder and uncomment below -->
-      <img src="foto5.jpg" alt="">
+      <img src="foto5.jpeg" alt="">
     </div>
   </div>
   <button class="btn" onclick="goTo(11)">Next →</button>
@@ -569,7 +569,7 @@
   </p>
   <div class="reward-photo" style="margin-top:24px">
     <!-- TO REPLACE: put photo6.jpg in the same folder and uncomment below -->
-    <img src="foto6.jpg" alt="">
+    <img src="foto6.jpeg" alt="">
   </div>
   <button class="btn" onclick="goTo(13)">Open your gift 🎁</button>
 </div>
@@ -589,7 +589,7 @@
   <p class="gift-text" style="color:var(--muted);font-size:15px;margin-top:6px">Let's have a chill time:</p>
   <div class="reward-photo">
     <!-- TO REPLACE: put photo7.jpg in the same folder and uncomment below -->
-    <!-- <img src="photo7.jpg" alt=""> -->
+    <img src="photo7.jpeg" alt="">
   </div>
   <p class="gift-text" style="margin-top:4px">
     Since we'll be a bit hungry after that,
@@ -597,7 +597,7 @@
   </p>
   <div class="reward-photo">
     <!-- TO REPLACE: put photo8.jpg in the same folder and uncomment below -->
-    <!-- <img src="photo8.jpg" alt=""> -->
+    <img src="photo8.jpeg" alt="">
   </div>
   <button class="btn" onclick="goTo(14)">Almost there... 💛</button>
 </div>
@@ -619,7 +619,7 @@
 
   <p class="final-message">
     I love you so much <em>Klari</em>,<br>
-    and wish you always all the best.
+    and I enjoy a lot sharing my time with you.
   </p>
   <p class="signature">— Always yours,<br>Rod. 🌹</p>
   <button class="btn" onclick="restartApp()" style="margin-top:32px;border-color:rgba(255,255,255,0.15);color:var(--muted);font-size:13px;padding:12px 28px">↩ Start over</button>
@@ -651,6 +651,7 @@
   function goTo(n) {
     if (currentScreen === 14) stopConfettiLoop();
     const prev = document.getElementById(`screen-${currentScreen}`);
+    prev.querySelectorAll('video').forEach(v => { v.pause(); v.currentTime = 0; });
     prev.classList.add('exit');
     setTimeout(() => prev.classList.remove('active', 'exit'), 400);
     setTimeout(() => {
@@ -752,9 +753,9 @@
   // type: 'image' or 'video'
   // Put all files in the same folder as index.html.
   const SLIDESHOW_MEDIA = [
-    { type: 'image', src: 'photo9.jpg'  },
-    { type: 'image', src: 'photo10.jpg' },
-    { type: 'image', src: 'photo11.jpg' },
+    { type: 'image', src: 'photo9.jpeg'  },
+    { type: 'image', src: 'photo10.jpeg' },
+    { type: 'image', src: 'photo11.jpeg' },
     { type: 'video', src: 'video4.mp4' },
     // { type: 'image', src: 'photo12.jpg' },
     // { type: 'video', src: 'video4.mp4'  },
